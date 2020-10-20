@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1603225745 source:c:\users\asmaa\documents\asmaa\menu\main.c
+	<stdio.h>
+	<stdlib.h>
+	"gotoxy.h"
+
+1603224623 c:\users\asmaa\documents\asmaa\menu\gotoxy.h
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<windows.h>
+

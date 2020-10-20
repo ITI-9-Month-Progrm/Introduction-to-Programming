@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1603225946 source:c:\users\asmaa\documents\asmaa\lab2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<windows.h>
+

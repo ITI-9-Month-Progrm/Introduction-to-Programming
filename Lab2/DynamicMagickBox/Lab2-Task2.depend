@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1603196808 source:c:\users\asmaa\documents\asmaa\lab2-task2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+
