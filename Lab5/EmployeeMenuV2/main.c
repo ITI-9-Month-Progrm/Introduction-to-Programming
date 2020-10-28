@@ -143,6 +143,11 @@ void printAllInfo(struct Employee  employee)
     printf("%f\n",employee.deduct);
 }
 
+
+
+
+
+
 int main()
 {
     struct Employee emp[size];
@@ -151,6 +156,11 @@ int main()
     char ch;
     int index;
     char menu[4][12]= {"New","DisplayItem","DisplayAll","Exit"};
+    for(i=0;i<size;i++){
+       emp[i].id=0;
+    }
+
+
     do
     {
         textattr(NPen);
@@ -170,7 +180,9 @@ int main()
             }
             _cprintf("%s",menu[i]);
         }
+        printf("\n");
         //for movement
+
 
         ch=getch();
         switch(ch)
@@ -225,22 +237,31 @@ int main()
                 printf("Please Enter number of index to display information\n");
                 scanf("%i",&index);
                 system("cls");
-                if(index<size)
+                if(index<size && emp[index].id!=0)
                 {
                     system("cls");
                     printInfo(emp[index]);
                 }
                 else
                 {
-                    printf("This index in not valid\n");
+                    printf("Info Not Found\n");
                 }
                 getch();
                 break;
             case 2:
+                system("cls");
                 for(j=0; j<size; j++)
                 {
-                    printAllInfo(emp[j]);
+                    if(emp[j].id!=0){
+                         printf("employee info of index  [ %i",j);
+                         printf("] is :\n\n");
+                         printAllInfo(emp[j]);
                     printf("-------------------------------------\n");
+                    }
+                   else {
+                    printf("OOPs!!employee info of index  [ %i",j);
+                    printf("] is Empty!\n");
+                   }
                 }
                 getch();
                 break;

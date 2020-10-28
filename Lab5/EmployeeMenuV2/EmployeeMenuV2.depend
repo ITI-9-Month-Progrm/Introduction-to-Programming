@@ -1,0 +1,19 @@
+# depslib dependency file v1.0
+1603899481 source:c:\users\asmaa\documents\iti\intro\lab5\employeemenuv2\main.c
+	<stdio.h>
+	<stdlib.h>
+	"conio.c"
+	<windows.h>
+	<string.h>
+
+1386433476 c:\users\asmaa\documents\iti\intro\lab5\employeemenuv2\conio.c
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	<string.h>
+	"conio2.h"
+
+1386353378 c:\users\asmaa\documents\iti\intro\lab5\employeemenuv2\conio2.h
+	<conio.h>
+	<windows.h>
+

@@ -146,6 +146,7 @@ int main()
     int i,current=0,exitFlag=0;
     char ch;
     char menu[3][8]= {"New","Display","Exit"};
+    for(i=0;i<size;i++){emp[i].id=0;}
     do
     {
         textattr(NPen);
@@ -208,9 +209,19 @@ int main()
                 getch();
                 break;
             case 1:
-                for(j=0;j<size;j++){
-                    printAllInfo(emp[j]);
-                    printf("------------------------------------------------\n");
+                 system("cls");
+                for(j=0; j<size; j++)
+                {
+                    if(emp[j].id!=0){
+                         printf("employee info of index  [ %i",j);
+                         printf("] is :\n\n");
+                         printAllInfo(emp[j]);
+                    printf("-------------------------------------\n");
+                    }
+                   else {
+                    printf("OOPs!!employee info of index  [ %i",j);
+                    printf("] is Empty!\n");
+                   }
                 }
                 getch();
                 break;
