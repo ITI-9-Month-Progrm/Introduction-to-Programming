@@ -11,63 +11,97 @@
 #define Home 71
 #define End 79
 #define Esc 27
-#define size 5
+#define size 10
+#define gotoxyDistance 15
+
 int main()
 {
-    system("cls");
-    char arr[size];
-    char *ptr;
-    int i,j,current=0,exitFlag=0,lenstr=0;
-    char c;
 
 
-    ptr=arr;
-    _flushall();
-    i=0;
+
+    char arr[size ];     //to store data
+    char *ptrStr,*ptrEnd,*ptrCurr ;   // to hold addresses and its values
+    int exitFlag=0,start=0,end=0,curr=0,i=0; //for looping
+    char c;  // for read
+
+
+    ptrStr=ptrCurr=ptrEnd=arr;  // all pointers hold start of array
+
+    clrscr();
+    gotoxy(curr+gotoxyDistance,gotoxyDistance);   //start at this position
+
     do
     {
-        textattr(HPen);
-        ptr[i]=getchar();
-        current=i;
-        switch(ptr[i]){
-    case -32:
+
         c=getch();
-        switch(c){
-        case Left:
-            current=i-1;
+        switch(c)
+        {
 
-            if(current<0){
-                 current=i;
-                 ptr[current]=getchar();
+        case -32:   //for move left,right ,home or end
+            c=getch();
+            switch(c)
+            {
+            case Left:
+                if(curr!=start)
+                {
+                    curr--;
+                    ptrCurr--;
+                }
+
+                break;
+            case Right:
+                if(curr!=end)
+                {
+                    curr++;
+                    ptrCurr++;
+                }
+                break;
+            case Home:
+                curr=start;
+                ptrCurr=ptrStr;
+                break;
+            case End:
+                curr=end;
+                ptrCurr=ptrEnd;
+
+                break;
             }
+               gotoxy(curr+gotoxyDistance,gotoxyDistance);  // move to new position after updating of current position and its value
+
             break;
-        case Right:
-            current=i+1;
-            if(current>i){
-                current=0;
-            }
-            break;
-        case Home:
-            current=0;
-            break;
-        case End:break;
-        current=i;
+            //to print final string and put '/' to determine end of string
         case Enter:
-            printf("test\n");
+            *ptrEnd='/';
+            printf("\n");
+            while(arr[i]!='/')
+            {
+                printf("%c",arr[i]);
+                i++;
+            }
+            exitFlag=1;  // to exit from loop
             break;
-        case Esc :
-            exit(0);
+        case Esc:
+            exitFlag=1;
             break;
-        }
+        default :
 
+            if(isprint(c))  //if c is a:z or A:Z
+            {
+                if(curr<start+size)   //to read character and put in specific index of array
+                {
+                    printf("%c",c);
+                    *ptrCurr=c;
+                    if(curr==end)
+                    {
+                        end++;
+                        ptrEnd++;
+                    }
 
-        break;
-
-
-
-        }++i;
-
-
-   } while(exitFlag==0);
+                    curr++;
+                    ptrCurr++;
+                    }
+                    }
+            break;}
+        }while(exitFlag!=1);
     return 0;
 }
