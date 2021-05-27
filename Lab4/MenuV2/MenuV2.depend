@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1603370402 source:c:\users\asmaa\documents\iti\intro\lab4\menuv2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<windows.h>
+	<string.h>
+

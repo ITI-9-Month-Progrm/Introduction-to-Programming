@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1603282727 source:c:\users\asmaa\documents\iti\intro\lab3\matrix_multiplcation\main.c
+	<stdio.h>
+	<stdlib.h>
+

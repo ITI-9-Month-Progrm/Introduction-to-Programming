@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1604346396 source:d:\iti\introduction-to-programming\lab7\singlelineeditor\main.c
+	<stdio.h>
+	<stdlib.h>
+

@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1603372281 source:c:\users\asmaa\documents\iti\intro\lab4\get_display_string\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+

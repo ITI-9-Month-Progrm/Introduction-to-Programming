@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1603369964 source:c:\users\asmaa\documents\iti\intro\lab4\kyes\main.c
+	<stdio.h>
+	<stdlib.h>
+
